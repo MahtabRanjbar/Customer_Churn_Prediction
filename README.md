@@ -1,8 +1,8 @@
 # Customer Churn Prediction
 
-![GitHub](https://img.shields.io/https://github/MahtabRanjbar/Customer_Churn_Prediction)
-![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
+![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%3E%3D13-blue?logo=postgresql)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.95+-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.20+-red)
 ![ML](https://img.shields.io/badge/ML-GradientBoosting-yellow)
