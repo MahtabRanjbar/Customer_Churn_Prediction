@@ -1,5 +1,3 @@
-# frontend/components/about.py
-
 import streamlit as st
 
 def about_tab():

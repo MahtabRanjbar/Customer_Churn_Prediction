@@ -1,5 +1,3 @@
-# frontend/components/retrain.py
-
 import streamlit as st
 import requests
 

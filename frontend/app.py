@@ -1,7 +1,5 @@
-
 import streamlit as st
 from utils import load_data
-
 from components.sidebar import filter_data
 from components.metrics import display_summary_metrics, download_filtered_data
 from components.plots import (
@@ -12,11 +10,9 @@ from components.plots import (
     plot_gender_vs_churn, plot_service_usage_vs_churn, plot_paperlessbilling_vs_churn,
     plot_totalcharges_boxplot, plot_scatter_matrix, plot_kmeans_clusters
 )
-
 from components.insights import insights_tab
-from components.about import about_tab
 from components.prediction import prediction_form
-
+from components.about import about_tab
 
 # Set page configuration
 st.set_page_config(
@@ -32,22 +28,21 @@ def main():
     Use the sidebar to filter data and switch between tabs for an in-depth look at visualizations, insights, predictions, and more.
     """)
 
-if __name__ == "__main__":
-    main()
-    
     # Load and filter data once
     data = load_data()
     filtered_data = filter_data(data)
-    
+
     # Create tabs with icons
     tabs = st.tabs(["🏠 Overview", "📊 Insights", "🔮 Prediction", "ℹ️ About"])
+
     # --- Overview Tab ---
     with tabs[0]:
         st.header("🏠 Overview")
         display_summary_metrics(filtered_data)
         download_filtered_data(filtered_data)
         
-    col1, col2 = st.columns(2)
+        st.subheader("General Visualizations")
+        col1, col2 = st.columns(2)
         with col1:
             st.plotly_chart(plot_churn_distribution(filtered_data), use_container_width=True, key="plot_churn_distribution")
             with st.expander("About Churn Distribution"):
@@ -81,7 +76,7 @@ if __name__ == "__main__":
         st.plotly_chart(plot_internet_service_donut(filtered_data), use_container_width=True, key="plot_internet_service_donut")
         with st.expander("About Internet Service Usage"):
             st.markdown(expander_explanation("internet_service"))
-            
+        
         st.subheader("Data Preview")
         st.dataframe(filtered_data.head(20))
         
@@ -118,21 +113,21 @@ if __name__ == "__main__":
             else:
                 st.info("No 'TotalCharges' data available.")
             st.plotly_chart(plot_scatter_matrix(filtered_data), use_container_width=True, key="plot_scatter_matrix")
-            
-            # 5. Correlations and Feature Importance
+        
+        # 5. Correlations and Feature Importance
         with st.expander("📈 Correlations and Feature Importance"):
             # The correlation heatmap was shown in Insights, but we add a scatter matrix here.
             st.plotly_chart(plot_scatter_matrix(filtered_data), use_container_width=True, key="plot_scatter_matrix_2")
-            
-            # 6. Segment-Based Analysis (Clustering)
+        
+        # 6. Segment-Based Analysis (Clustering)
         with st.expander("🧠 Segment-Based Analysis"):
             st.plotly_chart(plot_kmeans_clusters(filtered_data), use_container_width=True, key="plot_kmeans_clusters")
-            
+    
     # --- Insights Tab ---
     with tabs[1]:
         insights_tab(filtered_data)
 
-   # --- Prediction Tab ---
+    # --- Prediction Tab ---
     with tabs[2]:
         st.header("🔮 Prediction")
         st.markdown("Enter customer details below to predict churn using our trained model.")
@@ -141,7 +136,5 @@ if __name__ == "__main__":
     # --- About Tab ---
     with tabs[3]:
         about_tab()
-    
-    
-
-
+if __name__ == "__main__":
+    main()

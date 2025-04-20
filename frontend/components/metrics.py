@@ -1,5 +1,3 @@
-# frontend/components/metrics.py
-
 import streamlit as st
 
 def display_summary_metrics(df):

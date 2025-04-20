@@ -1,5 +1,3 @@
-# frontend/components/plots.py
-
 import plotly.express as px
 import pandas as pd
 from sklearn.cluster import KMeans
