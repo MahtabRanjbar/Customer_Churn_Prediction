@@ -1,6 +1,6 @@
 # Customer Churn Prediction
 
-![GitHub](https://img.shields.io/github/license/MahtabRanjbar/customer-churn-prediction)
+![GitHub](https://img.shields.io/https://github/MahtabRanjbar/Customer_Churn_Prediction)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.95+-green)
