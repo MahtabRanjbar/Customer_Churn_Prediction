@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+pandas
+numpy
+xgboost
+joblib
+scikit-learn  
+matplotlib
+imbalanced-learn
+lightgbm
+catboost
+optuna
+shap
+
