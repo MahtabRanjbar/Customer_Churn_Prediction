@@ -13,6 +13,10 @@ from components.plots import (
     plot_totalcharges_boxplot, plot_scatter_matrix, plot_kmeans_clusters
 )
 
+from components.insights import insights_tab
+from components.about import about_tab
+
+
 # Set page configuration
 st.set_page_config(
     page_title="Customer Churn Dashboard",
@@ -122,6 +126,15 @@ if __name__ == "__main__":
             # 6. Segment-Based Analysis (Clustering)
         with st.expander("🧠 Segment-Based Analysis"):
             st.plotly_chart(plot_kmeans_clusters(filtered_data), use_container_width=True, key="plot_kmeans_clusters")
+            
+    # --- Insights Tab ---
+    with tabs[1]:
+        insights_tab(filtered_data)
+
+
+    # --- About Tab ---
+    with tabs[3]:
+        about_tab()
     
     
 
