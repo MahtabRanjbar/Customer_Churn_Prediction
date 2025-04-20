@@ -3,6 +3,7 @@ import streamlit as st
 from utils import load_data
 
 from components.sidebar import filter_data
+from components.metrics import display_summary_metrics, download_filtered_data
 
 # Set page configuration
 st.set_page_config(
@@ -27,6 +28,12 @@ if __name__ == "__main__":
     
     # Create tabs with icons
     tabs = st.tabs(["🏠 Overview", "📊 Insights", "🔮 Prediction", "ℹ️ About"])
+    # --- Overview Tab ---
+    with tabs[0]:
+        st.header("🏠 Overview")
+        display_summary_metrics(filtered_data)
+        download_filtered_data(filtered_data)
+        
     
 
 
