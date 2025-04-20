@@ -15,6 +15,7 @@ from components.plots import (
 
 from components.insights import insights_tab
 from components.about import about_tab
+from components.prediction import prediction_form
 
 
 # Set page configuration
@@ -131,6 +132,11 @@ if __name__ == "__main__":
     with tabs[1]:
         insights_tab(filtered_data)
 
+   # --- Prediction Tab ---
+    with tabs[2]:
+        st.header("🔮 Prediction")
+        st.markdown("Enter customer details below to predict churn using our trained model.")
+        prediction_form()
 
     # --- About Tab ---
     with tabs[3]:
