@@ -2,6 +2,8 @@
 import streamlit as st
 from utils import load_data
 
+from components.sidebar import filter_data
+
 # Set page configuration
 st.set_page_config(
     page_title="Customer Churn Dashboard",
@@ -22,4 +24,9 @@ if __name__ == "__main__":
     # Load and filter data once
     data = load_data()
     filtered_data = filter_data(data)
+    
+    # Create tabs with icons
+    tabs = st.tabs(["🏠 Overview", "📊 Insights", "🔮 Prediction", "ℹ️ About"])
+    
+
 
