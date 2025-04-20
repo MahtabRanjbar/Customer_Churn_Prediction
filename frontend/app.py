@@ -1,5 +1,6 @@
 
 import streamlit as st
+from utils import load_data
 
 # Set page configuration
 st.set_page_config(
@@ -17,3 +18,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    # Load and filter data once
+    data = load_data()
+    filtered_data = filter_data(data)
+
