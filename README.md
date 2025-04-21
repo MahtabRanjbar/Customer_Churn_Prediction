@@ -137,7 +137,7 @@ The project uses a **Gradient Boosting Classifier** with hyperparameter tuning v
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/customer-churn-prediction.git
+   git clone https://github.com/MahtabRanjbar/customer-churn-prediction.git
    cd customer-churn-prediction
    ```
 
